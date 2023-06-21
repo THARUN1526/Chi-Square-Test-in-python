@@ -1,0 +1,19 @@
+The code  performs the chi-square test for independence using two different approaches: the p-value approach and the critical value approach. Here's a step-by-step explanation of the algorithm:
+
+1. The code begins by importing the necessary libraries, pandas and scipy.stats.
+
+2. A sample dataset is created representing a survey response. The data contains two variables: 'Age Group' and 'Political Affiliation'.
+
+3. The pandas function `pd.crosstab` is used to create a contingency table called `data_crosstab`. This table shows the frequencies of each combination of 'Age Group' and 'Political Affiliation'.
+
+4. The significance level (alpha) is defined, which determines the threshold for rejecting the null hypothesis.
+
+5. The code initializes the `chi_square` variable to zero and loops through each unique category in 'Political Affiliation' and 'Age Group'. It calculates the observed (O) and expected (E) frequencies for each combination, and then computes the chi-square statistic using the formula: chi_square += (O-E)**2/E. This is done to calculate the chi-square test statistic.
+
+6. The p-value approach is used to determine the conclusion of the hypothesis test. The code calculates the p-value by subtracting the cumulative distribution function (CDF) of the chi-square distribution from 1. The degrees of freedom used in the CDF calculation are (number of rows - 1) * (number of columns - 1). If the p-value is less than or equal to the significance level, the null hypothesis is rejected, and the conclusion is updated accordingly.
+
+7. The critical value approach is then used to determine the conclusion. The code calculates the critical value by using the percent point function (PPF) of the chi-square distribution at the specified significance level. If the chi-square test statistic is greater than the critical value, the null hypothesis is rejected, and the conclusion is updated.
+
+8. Finally, the code prints the chi-square test statistic, the p-value (approach 1), and the critical value (approach 2), along with the conclusion of the hypothesis test for each approach.
+
+The code essentially performs the same chi-square test using two different approaches, allowing you to choose between them based on your preference or requirements. Both approaches yield the same conclusion but differ in their decision rules.
