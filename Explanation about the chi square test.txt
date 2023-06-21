@@ -1,0 +1,28 @@
+The chi-square test is a statistical test used to determine if there is a significant association between two categorical variables. It is based on the chi-square distribution and compares the observed frequencies in each category with the expected frequencies.
+
+In Python, the chi-square test can be performed using the `scipy.stats` module. Here's a brief explanation of how to use it:
+
+1. Import the necessary libraries:
+```python
+from scipy.stats import chi2_contingency
+```
+
+2. Prepare your data:
+   - Create a contingency table that represents the observed frequencies of the categories. This table can be created using NumPy or pandas.
+   - Ensure that the rows represent one variable, and the columns represent the other variable.
+
+3. Perform the chi-square test:
+```python
+# Assuming you have a contingency table named 'observed_table'
+chi2, p_value, dof, expected = chi2_contingency(observed_table)
+```
+   - `chi2`: The test statistic, which follows a chi-square distribution.
+   - `p_value`: The p-value associated with the test statistic. It indicates the probability of observing the data if there is no association between the variables.
+   - `dof`: The degrees of freedom, which is calculated as `(number of rows - 1) * (number of columns - 1)`.
+   - `expected`: The expected frequencies based on the assumption of no association.
+
+4. Interpret the results:
+   - If the p-value is less than a chosen significance level (e.g., 0.05), you can reject the null hypothesis and conclude that there is a significant association between the variables.
+   - If the p-value is greater than the significance level, you fail to reject the null hypothesis, suggesting no significant association.
+
+Remember that the chi-square test assumes certain conditions, such as the independence of observations and a sufficient sample size. It is commonly used for analyzing categorical data and can be applied to a variety of research fields, including social sciences, biology, and market research.
