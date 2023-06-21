@@ -1,0 +1,19 @@
+The time complexity of the chi-square test in Python depends on the size of the contingency table and the number of unique categories in each variable. Let's analyze the time complexity of the steps involved:
+
+1. Creating the contingency table: 
+   - The time complexity of creating a contingency table using `pd.crosstab` in pandas is O(n), where n is the number of observations in the dataset.
+
+2. Calculating the chi-square test statistic:
+   - In the provided code, the chi-square statistic is calculated by iterating over each unique category combination and performing calculations. 
+   - Since there are r rows and c columns in the contingency table, the total number of iterations would be r * c.
+   - The time complexity of this step is O(r * c), where r is the number of unique categories in one variable and c is the number of unique categories in the other variable.
+
+3. P-value calculation:
+   - The time complexity of calculating the p-value using `stats.chi2.cdf` is O(1) because it involves evaluating the cumulative distribution function of the chi-square distribution.
+
+4. Critical value calculation:
+   - The time complexity of calculating the critical value using `stats.chi2.ppf` is also O(1) as it involves evaluating the percent point function of the chi-square distribution.
+
+Overall, the time complexity of the chi-square test in Python is dominated by the step of calculating the chi-square test statistic, which has a complexity of O(r * c), where r and c are the numbers of unique categories in the variables being analyzed.
+
+It's important to note that the time complexity may vary depending on the specific implementation, the size of the contingency table, and the computational efficiency of the underlying statistical libraries used in Python.
