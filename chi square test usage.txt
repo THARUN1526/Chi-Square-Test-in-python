@@ -1,0 +1,23 @@
+The chi-square test is commonly used in various applications to determine if there is a significant association between categorical variables. Here are a few examples of its usage:
+
+1. Goodness of Fit Test:
+   - The chi-square test can be used to assess whether observed data fits an expected distribution.
+   - For example, you can use it to test if the observed frequencies of different eye colors in a population match the expected frequencies based on a hypothesized distribution (e.g., 25% brown, 50% blue, 25% green).
+
+2. Independence Test:
+   - The chi-square test can determine if there is a relationship or association between two categorical variables.
+   - For example, you can use it to analyze if there is a significant association between gender and political party preference based on survey data.
+
+3. Homogeneity Test:
+   - The chi-square test can compare the distributions of two or more groups to see if they are significantly different.
+   - For example, you can use it to assess if there is a difference in the distribution of income levels among different education levels.
+
+4. Testing Hypotheses:
+   - The chi-square test can be employed to test hypotheses and make inferences about population parameters.
+   - For instance, you can use it to determine if the observed data provides evidence to support a hypothesized proportion or distribution.
+
+It's important to note that the chi-square test assumes certain conditions, such as the independence of observations, an adequate sample size, and the expected frequencies being reasonably large. Additionally, there are variations of the chi-square test, such as Fisher's exact test, which is used when the sample size is small.
+
+Python provides libraries like `scipy.stats` and `statsmodels.stats` that offer functions for performing chi-square tests. These libraries simplify the process of calculating chi-square statistics, p-values, and conducting hypothesis tests.
+
+Remember to appropriately interpret the results of the chi-square test in the context of your data and research question.
